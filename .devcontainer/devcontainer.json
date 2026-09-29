@@ -1,0 +1,30 @@
+{
+    "name": "Heart Disease Predictor",
+    "image": "mcr.microsoft.com/devcontainers/python:3.12",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    },
+    "postCreateCommand": "pip install -r requirements.txt",
+    "forwardPorts": [
+        8000,
+        8888
+    ],
+    "portsAttributes": {
+        "8000": {
+            "label": "FastAPI",
+            "onAutoForward": "notify"
+        },
+        "8888": {
+            "label": "Jupyter Notebook",
+            "onAutoForward": "silent"
+        }
+    }
+}
