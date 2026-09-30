@@ -10,6 +10,7 @@ A machine learning application that estimates the probability of heart disease f
 
 - [Heart Disease Predictor](#heart-disease-predictor)
   - [Table of Contents](#table-of-contents)
+  - [Live Demo](#live-demo)
   - [Overview](#overview)
   - [Features](#features)
   - [Project Structure](#project-structure)
@@ -35,6 +36,16 @@ A machine learning application that estimates the probability of heart disease f
   - [Limitations](#limitations)
   - [Future Work](#future-work)
 
+---
+
+## Live Demo
+ 
+The application is deployed and available online:
+ 
+**[Open the Heart Disease Predictor](https://heart-disease-predictor-dtx7k6yrodjqzeapp53wunx.streamlit.app/)**
+ 
+If the backend has been idle, the first prediction may take a short while to respond while the service starts up.
+ 
 ---
 
 ## Overview
