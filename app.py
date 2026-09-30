@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pandas as pd
 import joblib
@@ -10,6 +11,14 @@ try:
     xgb_model = joblib.load("models/xgboost_model.pkl")
 except Exception as e:
     raise RuntimeError(f"Failed to load models. Ensure .pkl files exist. Error: {e}")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 class PatientData(BaseModel):
     age: float
@@ -40,6 +49,10 @@ class PatientData(BaseModel):
                 "ca": 0
             }
         }
+
+@app.get("/predict")
+def read_root():
+    return {"message": "Hello World"}
 
 @app.post("/predict")
 def predict_heart_disease(patient: PatientData):
