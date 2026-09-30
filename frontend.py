@@ -5,7 +5,7 @@ st.set_page_config(page_title="Heart Disease Predictor", layout="centered")
 st.title("Heart Disease Risk Predictor")
 st.write("Enter the patient's medical details below to assess their heart disease risk using our XGBoost model.")
 
-API_URL = "http://127.0.0.1:8000/predict"
+API_URL = "https://heart-disease-predictor-ufhs.onrender.com/predict"
 
 with st.form("patient_form"):
     st.subheader("Patient Demographics")
